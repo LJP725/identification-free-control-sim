@@ -59,7 +59,6 @@ The code has been tested with the following environment:
 
 > Notes:
 > - MOSEK requires a valid license.
-> - Make sure YALMIP and MPT3 are on the MATLAB path before running the demos.
 
 
 
