@@ -61,7 +61,8 @@ The code has been tested with the following environment:
 
 > Notes:
 > - MOSEK requires a valid license.
-
+> - 
+---
 ## Features
 
 > **GitHub preview note:** GitHub does not render `.eps` files in README.  
@@ -69,10 +70,12 @@ The code has been tested with the following environment:
 
 ### Lane-Keeping (LK): Effect of the Control Invariant Set (CIS)
 
-**What to look for:** With the CIS constraint, the closed-loop trajectories remain within the lane envelope and preserve recursive feasibility over all tested vertex initializations; without the CIS constraint, some trajectories can violate the lane bounds.
+**What to look for:** Adding the CIS constraint enforces **recursive feasibility** and keeps the lateral position within lane bounds under the same vertex-initialized tests; without the CIS constraint, some trajectories can violate the lane envelope when the steering input remains within limits.
 
 **Online QP timing (logged in Simulink):**  
 LK (with CIS, sampling period **T = 0.1 s**, **N = 21200** samples): mean **6.216 ms**, median **5.911 ms**, 95th percentile **9.090 ms**.
+
+**(1) Lateral displacement and steering angle (Case 1: with CIS, Case 2: without CIS)**
 
 <table align="center">
   <tr>
@@ -97,7 +100,8 @@ LK (with CIS, sampling period **T = 0.1 s**, **N = 21200** samples): mean **6.21
   </tr>
 </table>
 
-**State evolution (projection view for intuition):** The black polyhedron depicts the projection of the computed CIS; colored curves are trajectories initialized at its vertices.
+**(2) State evolution in the (v, psi, r) subspace (projection view for intuition)**  
+The black polyhedron depicts the projection of the computed CIS; colored curves are trajectories initialized at its vertices.
 
 <table align="center">
   <tr>
@@ -116,20 +120,28 @@ LK (with CIS, sampling period **T = 0.1 s**, **N = 21200** samples): mean **6.21
 
 ### Adaptive Cruise Control (ACC): Robustness + RCIS + Safety Margin
 
-**What to look for:** RCIS constraints enforce robust recursive feasibility; adding a positive CBF margin further increases the safety buffer.
+**What to look for:**  
+- The RCIS is computed inside a truncated safety set and certified robust under the full actuator range (with a reserved braking margin during construction).  
+- In closed-loop simulations, adding **RCIS constraints** prevents feasibility loss that can lead to safety violations; adding a **positive margin** further increases the safety buffer.
 
 **Online QP timing (logged in Simulink):**  
 ACC (Case 4: robust + RCIS + margin, sampling period **T = 0.2 s**, **N = 500** samples): mean **9.872 ms**, median **9.143 ms**, 95th percentile **14.968 ms**.
+
+**(1) RCIS and iteration outcome**
 
 <p align="center">
   <img src="Figures/ACC1.png" width="720" alt="ACC RCIS and iteration process"><br>
   <b>RCIS (blue) inside the truncated safety set (red)</b>
 </p>
 
+**(2) Closed-loop responses (velocity, traction force, and safety function)**  
+Comparison of four controllers: nominal baseline, robust-only, robust + RCIS, robust + RCIS + margin.
+
 <p align="center">
   <img src="Figures/ACC2.png" width="980" alt="ACC closed-loop trajectories and safety function"><br>
   <b>Closed-loop ACC trajectories and safety evolution under four controller configurations</b>
 </p>
+
 
 ---
 
