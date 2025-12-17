@@ -73,7 +73,7 @@ The code has been tested with the following environment:
 **What to look for:** Adding the CIS constraint enforces **recursive feasibility** and keeps the lateral position within lane bounds under the same vertex-initialized tests; without the CIS constraint, some trajectories can violate the lane envelope when the steering input remains within limits.
 
 **Online QP timing (logged in Simulink):**  
-LK (with CIS, sampling period **T = 0.1 s**, **N = 21200** samples): mean **6.216 ms**, median **5.911 ms**, 95th percentile **9.090 ms**.
+LK (with CIS, sampling period **T = 0.1 s**, **N = 30080** samples): mean **7.639 ms**, median **7.315 ms**, 95th percentile **10.111 ms**.
 
 **(1) Lateral displacement and steering angle (Case 1: with CIS, Case 2: without CIS)**
 
