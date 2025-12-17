@@ -48,7 +48,7 @@ The repository includes two case studies: lane keeping (LK) and adaptive cruise 
 > Notes:
 > -Simulation data files (`LK_data.mat`, `ACC_data.mat`) are **saved manually** and are **not automatically overwritten** by running `LK_demo.mlx` / `ACC_demo.mlx`.
 
-## Requirements
+## Tested environment
 
 The code has been tested with the following environment:
 
