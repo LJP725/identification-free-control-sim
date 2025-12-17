@@ -77,28 +77,20 @@ LK (with CIS, sampling period **T = 0.1 s**, **N = 21200** samples): mean **6.21
 
 **(1) Lateral displacement and steering angle (Case 1: with CIS, Case 2: without CIS)**
 
-<table align="center" style="border-collapse:collapse; border:none;">
-  <tr style="background-color:#fff;">
-    <td align="center" style="background-color:#fff; border:none;">
-      <img src="Figures/LK3.png" width="240" alt="LK Case 1 lateral displacement"><br>
-      <b>Case 1 (with CIS): Lateral displacement</b>
-    </td>
-    <td align="center" style="background-color:#fff; border:none;">
-      <img src="Figures/LK5.png" width="240" alt="LK Case 1 steering angle"><br>
-      <b>Case 1 (with CIS): Steering angle</b>
-    </td>
-  </tr>
-  <tr style="background-color:#fff;">
-    <td align="center" style="background-color:#fff; border:none;">
-      <img src="Figures/LK4.png" width="240" alt="LK Case 2 lateral displacement"><br>
-      <b>Case 2 (no CIS): Lateral displacement</b>
-    </td>
-    <td align="center" style="background-color:#fff; border:none;">
-      <img src="Figures/LK6.png" width="240" alt="LK Case 2 steering angle"><br>
-      <b>Case 2 (no CIS): Steering angle</b>
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <img src="Figures/LK3.png" width="240" alt="LK Case 1 lateral displacement">
+  <img src="Figures/LK5.png" width="240" alt="LK Case 1 steering angle"><br>
+  <b>Case 1 (with CIS): Lateral displacement</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <b>Case 1 (with CIS): Steering angle</b>
+</p>
+
+<p align="center">
+  <img src="Figures/LK4.png" width="240" alt="LK Case 2 lateral displacement">
+  <img src="Figures/LK6.png" width="240" alt="LK Case 2 steering angle"><br>
+  <b>Case 2 (no CIS): Lateral displacement</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <b>Case 2 (no CIS): Steering angle</b>
+</p>
+
 
 
 **(2) State evolution in the (v, psi, r) subspace (projection view for intuition)**  
