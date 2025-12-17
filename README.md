@@ -9,11 +9,11 @@ The repository includes two case studies: lane keeping (LK) and adaptive cruise 
 .
 ├─ LK_demo.mlx                 # Lane-keeping (LK) main demo: runs all LK simulations and generates plots (calls LK_sim.slx)
 ├─ LK_sim.slx                  # LK Simulink model (invoked by LK_demo.mlx)
-├─ LK_draw.mlx                 # Post-processing for LK: generates figures and exports EPS (invoked by LK_demo.mlx)
+├─ LK_draw.mlx                 # Post-processing for LK: generates solve timings and figures and exports EPS (invoked by LK_demo.mlx)
 ├─ ACC_demo.mlx                # Adaptive cruise control (ACC) main demo: runs all ACC simulations and generates plots (calls ACC_Sample.slx, ACC_sim.slx)
 ├─ ACC_Sample.slx              # ACC data-collection/sampling Simulink model (invoked by ACC_demo.mlx)
 ├─ ACC_sim.slx                 # ACC closed-loop Simulink model (invoked by ACC_demo.mlx)
-├─ ACC_draw.mlx                # Post-processing for ACC: generates figures and exports EPS (invoked by ACC_demo.mlx)
+├─ ACC_draw.mlx                # Post-processing for ACC: generates solve timings and figures and exports EPS (invoked by ACC_demo.mlx)
 ├─ reoportEnvironment.mlx      # Reports software/hardware, solvers, and toolbox dependencies (update file paths before running)
 ├─ Figures/                    # Exported EPS figures
 ├─ AlgorithmCIS.m              # Algorithm 1: identification-free, data-driven CIS construction within a given set
@@ -45,6 +45,8 @@ The repository includes two case studies: lane keeping (LK) and adaptive cruise 
 1. Open `ACC_demo.mlx` and run all sections.
 2. The script calls `ACC_Sample.slx`, `ACC_sim.slx`, and `ACC_draw.mlx`, and exports EPS figures to `Figures/`.
 3. (Optional) To regenerate figures without rerunning Simulink, load `ACC_data.mat` and run `ACC_draw.mlx`.
+> Notes:
+> -Simulation data files (`LK_data.mat`, `ACC_data.mat`) are **saved manually** and are **not automatically overwritten** by running `LK_demo.mlx` / `ACC_demo.mlx`.
 
 ## Requirements
 
