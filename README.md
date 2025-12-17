@@ -69,7 +69,7 @@ The code has been tested with the following environment:
 
 ### Lane-Keeping (LK): Effect of the Control Invariant Set (CIS)
 
-**What to look for:** Adding the CIS constraint enforces **recursive feasibility** and keeps the lateral position within lane bounds under the same vertex-initialized tests; without the CIS constraint, some trajectories can violate the lane envelope even when the steering input remains within limits.
+**What to look for:** Adding the CIS constraint enforces **recursive feasibility** and keeps the lateral position within lane bounds under the same vertex-initialized tests; without the CIS constraint, some trajectories can violate the lane envelope when the steering input remains within limits.
 
 **(1) Lateral displacement and steering angle (Case 1: with CIS, Case 2: without CIS)**
 
